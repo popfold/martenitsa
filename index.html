@@ -14,27 +14,44 @@
   <canvas id="scene" aria-hidden="true"></canvas>
 
   <header class="site-header">
-    <a class="brand" href="#farewell">the first <b>martenitsa</b></a>
+    <a class="brand" href="#cover">the first <b>martenitsa</b></a>
     <nav aria-label="Pages">
       <a href="#tower">Huba</a>
       <a href="#danube">The Danube</a>
       <a href="#thread">The red thread</a>
       <a class="btn btn-small" href="#martenitsa">The martenitsa</a>
     </nav>
+    <!-- One link per language: popfoldFallback fills in where each goes (vite.config.ts lists the pages) -->
+    <nav class="langs" aria-label="Languages">
+      <a data-pf-lang="en" lang="en">EN</a>
+      <a data-pf-lang="bg" lang="bg">БГ</a>
+    </nav>
   </header>
 
   <main id="main">
     <!-- Each .stage section drives one beat of the 3D scene ("beats" in src/home.json), in the same order, and its id
-         is the beat's id. Each beat is one page of the book (its "pages" in src/home.json): scrolling turns them. -->
-    <section class="stage" id="farewell" data-text="left">
+         is the beat's id. The first beat shows the book shut ("closed" in src/home.json); each beat after it is one
+         page of the book (its "pages"): scrolling opens the cover, then turns them. -->
+    <section class="stage" id="cover" data-text="left">
       <div class="card card-hero">
         <p class="eyebrow">A Bulgarian legend</p>
         <h1>The first martenitsa</h1>
-        <p class="lead">Khan Kubrat told his sons to stay together, like a bundle of arrows no one can break. When he died, his son Asparuh led his people south to find a new home.</p>
+        <p class="lead">How a white thread turned red, told in a pop-up book of cross-stitch.</p>
+        <div class="actions">
+          <a class="btn" href="#farewell">Open the book</a>
+        </div>
+        <p class="tap-hint">Scroll to open the book and turn its pages: each one is sewn as it opens. Click a dot for more of the story.</p>
+      </div>
+    </section>
+
+    <section class="stage" id="farewell" data-text="left">
+      <div class="card">
+        <p class="eyebrow">Page one</p>
+        <h2>The bundle of arrows</h2>
+        <p>Khan Kubrat told his sons to stay together, like a bundle of arrows no one can break. When he died, his son Asparuh led his people south to find a new home.</p>
         <div class="actions">
           <a class="btn" href="#tower">Turn the page</a>
         </div>
-        <p class="tap-hint">Scroll to turn the pages: each one is sewn as it opens. Click a dot for more of the story.</p>
       </div>
     </section>
 

@@ -1,5 +1,7 @@
 import '@fontsource-variable/dm-sans';
 import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/rubik'; // the Bulgarian page's faces: they have Cyrillic
+import '@fontsource-variable/nunito';
 import './style.css';
 import { markFallback, markReady, scrollStage, shouldStart3D, viewToggle } from 'popfold/fallback';
 

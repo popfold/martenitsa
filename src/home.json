@@ -12,14 +12,16 @@
       { "id": "martenitsa", "label": "The martenitsa", "art": "art/martenitsa.webp", "stitch": true }
     ],
     "cover": "#8E1B24",
-    "paper": "#F4EEE2"
+    "paper": "#F4EEE2",
+    "closed": true
   },
   "beats": [
-    { "id": "farewell", "name": "The farewell", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 } },
-    { "id": "tower", "name": "Huba", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": -1 }, "zones": { "farewell": 1 } },
-    { "id": "danube", "name": "The Danube", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "farewell": 1, "tower": 1 } },
-    { "id": "thread", "name": "The red thread", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": -1 }, "zones": { "farewell": 1, "tower": 1, "danube": 1 } },
-    { "id": "martenitsa", "name": "The martenitsa", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "farewell": 1, "tower": 1, "danube": 1, "thread": 1 } }
+    { "id": "cover", "name": "Cover", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 } },
+    { "id": "farewell", "name": "The farewell", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "cover": 1 } },
+    { "id": "tower", "name": "Huba", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": -1 }, "zones": { "cover": 1, "farewell": 1 } },
+    { "id": "danube", "name": "The Danube", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "cover": 1, "farewell": 1, "tower": 1 } },
+    { "id": "thread", "name": "The red thread", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": -1 }, "zones": { "cover": 1, "farewell": 1, "tower": 1, "danube": 1 } },
+    { "id": "martenitsa", "name": "The martenitsa", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "cover": 1, "farewell": 1, "tower": 1, "danube": 1, "thread": 1 } }
   ],
   "pieces": [
     {

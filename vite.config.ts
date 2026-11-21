@@ -11,8 +11,12 @@ export default defineConfig({
     homeSaver({ home: 'src/home.json' }), // the studio's Save writes moved pieces into the home file
     popfoldFallback({
       siteName: 'The First Martenitsa',
-      homeFile: 'src/home.json', // its pieces' stories are written under their sections, and its id names the stills
-      storiesHeading: 'On this page',
+      pages: [
+        // its pieces' stories are written under their sections, and its id names the stills
+        { html: 'index.html', homeFile: 'src/home.json', storiesHeading: 'On this page' },
+        // the same page in Bulgarian, at bg/: its words swapped by src/i18n/bg.json
+        { html: 'bg/index.html', from: 'index.html', lang: 'bg', text: 'src/i18n/bg.json', homeFile: 'src/home.json', storiesHeading: 'On this page' },
+      ],
     }),
   ],
   build: {
