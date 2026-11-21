@@ -1,0 +1,16 @@
+// Hosting: one Cloudflare Worker that serves the built site (dist/) as static files at https://storybook.popfold.ca.
+// There is no server code. Deploy with `pnpm deploy:site`, which builds first (the stills are kept in git).
+// Cloudflare never sees this repository or Popfold's: only the built folder is uploaded. It asks not to be indexed
+// (public/_headers) while its Popfold branch is unreleased and the Bulgarian text is unreviewed.
+{
+  "name": "popfold-storybook",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "storybook.popfold.ca", "custom_domain": true }],
+  "workers_dev": false,
+  "preview_urls": false
+}
