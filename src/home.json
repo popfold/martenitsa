@@ -1,0 +1,74 @@
+{
+  "$schema": "../popfold/schema/home.schema.json",
+  "id": "martenitsa",
+  "name": "The first martenitsa",
+  "blurb": "A Bulgarian legend in a pop-up book of cross-stitch: each page is sewn as it opens.",
+  "book": {
+    "pages": [
+      { "id": "farewell", "label": "The farewell", "art": "art/farewell.webp", "stitch": true },
+      { "id": "tower", "label": "Huba", "art": "art/tower.webp", "stitch": true },
+      { "id": "danube", "label": "The Danube", "art": "art/danube.webp", "stitch": true },
+      { "id": "thread", "label": "The red thread", "art": "art/red-thread.webp", "stitch": true },
+      { "id": "martenitsa", "label": "The martenitsa", "art": "art/martenitsa.webp", "stitch": true }
+    ],
+    "cover": "#8E1B24",
+    "paper": "#F4EEE2"
+  },
+  "beats": [
+    { "id": "farewell", "name": "The farewell", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 } },
+    { "id": "tower", "name": "Huba", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": -1 }, "zones": { "farewell": 1 } },
+    { "id": "danube", "name": "The Danube", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "farewell": 1, "tower": 1 } },
+    { "id": "thread", "name": "The red thread", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": -1 }, "zones": { "farewell": 1, "tower": 1, "danube": 1 } },
+    { "id": "martenitsa", "name": "The martenitsa", "camera": [0.6, 6.5, 8.9], "lookAt": [0, 0.5, 0.3], "set": { "side": 1 }, "zones": { "farewell": 1, "tower": 1, "danube": 1, "thread": 1 } }
+  ],
+  "pieces": [
+    {
+      "id": "tulip-left", "room": "farewell", "kind": "stand", "at": [-2.35, 1.65], "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#C9952B" },
+      "story": {
+        "title": "Kubrat's sons",
+        "text": "Khan Kubrat told his sons to hold together, like a bundle of arrows that no one can break. After him, Asparuh led his people south to look for a new home.",
+        "tags": ["Page one"]
+      }
+    },
+    { "id": "tulip-white", "room": "farewell", "kind": "stand", "at": [-1.85, 1.75], "opts": { "shape": "flower", "w": 0.32, "h": 0.4, "lean": "front", "color": "#F4EEE2", "color2": "#3E6B3A", "color3": "#A3242C" } },
+    { "id": "tulip-right", "room": "farewell", "kind": "stand", "at": [2.3, 1.65], "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#C9952B" } },
+    {
+      "id": "lily", "room": "tower", "kind": "stand", "at": [-2.25, 1.7], "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#F4EEE2", "color2": "#3E6B3A", "color3": "#A3242C" },
+      "story": {
+        "title": "Huba waits",
+        "text": "Asparuh's sister Huba was held far from her brother. She waited for word that he had found the new land.",
+        "tags": ["Page two"]
+      }
+    },
+    { "id": "rose", "room": "tower", "kind": "stand", "at": [2.3, 1.7], "opts": { "shape": "flower", "w": 0.4, "h": 0.5, "lean": "front", "color": "#C8546A", "color2": "#3E6B3A", "color3": "#F4EEE2" } },
+    {
+      "id": "wave-left", "room": "danube", "kind": "stand", "at": [-1.6, 1.75], "opts": { "shape": "wave", "w": 1.6, "h": 0.32, "lean": "front", "color": "#1F4B4A" },
+      "story": {
+        "title": "Over the Danube",
+        "text": "When Asparuh found land south of the Danube, he sent a falcon to his sister with a white thread tied to its leg.",
+        "tags": ["Page three"]
+      }
+    },
+    { "id": "wave-right", "room": "danube", "kind": "stand", "at": [1.6, 1.75], "opts": { "shape": "wave", "w": 1.6, "h": 0.32, "lean": "front", "color": "#2B3F73" } },
+    {
+      "id": "rose-big", "room": "thread", "kind": "stand", "at": [-2.2, 1.65], "opts": { "shape": "flower", "w": 0.48, "h": 0.6, "lean": "front", "color": "#C8546A", "color2": "#3E6B3A", "color3": "#C9952B" },
+      "story": {
+        "title": "White turned red",
+        "text": "Huba escaped and set out to meet her brother. On the way an arrow struck the falcon, and its blood turned part of the white thread red.",
+        "tags": ["Page four"]
+      }
+    },
+    { "id": "rose-small", "room": "thread", "kind": "stand", "at": [-1.75, 1.78], "opts": { "shape": "flower", "w": 0.34, "h": 0.42, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#F4EEE2" } },
+    { "id": "rose-right", "room": "thread", "kind": "stand", "at": [2.25, 1.65], "opts": { "shape": "flower", "w": 0.46, "h": 0.58, "lean": "front", "color": "#C8546A", "color2": "#3E6B3A", "color3": "#C9952B" } },
+    {
+      "id": "pizho", "room": "martenitsa", "kind": "stand", "at": [-2.25, 1.7], "opts": { "shape": "flower", "w": 0.4, "h": 0.52, "lean": "front", "color": "#F4EEE2", "color2": "#3E6B3A", "color3": "#A3242C" },
+      "story": {
+        "title": "The first martenitsa",
+        "text": "Asparuh tied the red and white thread to his warriors' wrists. Bulgarians still tie red and white threads, martenitsi, on the first of March.",
+        "tags": ["Page five"]
+      }
+    },
+    { "id": "penda", "room": "martenitsa", "kind": "stand", "at": [2.25, 1.7], "opts": { "shape": "flower", "w": 0.4, "h": 0.52, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#F4EEE2" } },
+    { "id": "star", "room": "martenitsa", "kind": "stand", "at": [1.75, 1.8], "opts": { "shape": "star", "w": 0.3, "h": 0.3, "lean": "front", "color": "#C9952B" } }
+  ]
+}

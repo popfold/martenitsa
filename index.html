@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The First Martenitsa</title>
+  <meta name="description" content="The Bulgarian legend of the first martenitsa, told in a pop-up book of cross-stitch that is sewn as you scroll." />
+  <meta name="theme-color" content="#EFE7D8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="bg" aria-hidden="true"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#farewell">the first <b>martenitsa</b></a>
+    <nav aria-label="Pages">
+      <a href="#tower">Huba</a>
+      <a href="#danube">The Danube</a>
+      <a href="#thread">The red thread</a>
+      <a class="btn btn-small" href="#martenitsa">The martenitsa</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Each .stage section drives one beat of the 3D scene ("beats" in src/home.json), in the same order, and its id
+         is the beat's id. Each beat is one page of the book (its "pages" in src/home.json): scrolling turns them. -->
+    <section class="stage" id="farewell" data-text="left">
+      <div class="card card-hero">
+        <p class="eyebrow">A Bulgarian legend</p>
+        <h1>The first martenitsa</h1>
+        <p class="lead">Khan Kubrat told his sons to stay together, like a bundle of arrows no one can break. When he died, his son Asparuh led his people south to find a new home.</p>
+        <div class="actions">
+          <a class="btn" href="#tower">Turn the page</a>
+        </div>
+        <p class="tap-hint">Scroll to turn the pages: each one is sewn as it opens. Click a dot for more of the story.</p>
+      </div>
+    </section>
+
+    <section class="stage" id="tower" data-text="right">
+      <div class="card">
+        <p class="eyebrow">Page two</p>
+        <h2>Huba waits</h2>
+        <p>Asparuh's sister Huba was held far from her brother. She waited for word that he had found the new land, so she could escape and follow him.</p>
+      </div>
+    </section>
+
+    <section class="stage" id="danube" data-text="left">
+      <div class="card">
+        <p class="eyebrow">Page three</p>
+        <h2>A falcon over the Danube</h2>
+        <p>Asparuh found his land south of the Danube. He sent a falcon to Huba with a white thread tied to its leg: the sign that it was time.</p>
+      </div>
+    </section>
+
+    <section class="stage" id="thread" data-text="right">
+      <div class="card">
+        <p class="eyebrow">Page four</p>
+        <h2>White turned red</h2>
+        <p>Huba escaped and set out with the falcon. An arrow struck the bird on the way, and its blood turned part of the white thread red. It reached Asparuh all the same.</p>
+      </div>
+    </section>
+
+    <section class="stage stage-final" id="martenitsa" data-text="left">
+      <div class="card">
+        <p class="eyebrow">The end</p>
+        <h2>The first martenitsa</h2>
+        <p>Asparuh tore the red and white thread into pieces and tied them to his warriors' wrists. Bulgarians still tie red and white threads, martenitsi, on the first of March, for health and for spring.</p>
+        <p class="small">The legend has several versions: in some the bird is a swallow, or a dove, and the thread is sent by Asparuh's wife. The pictures were made with Midjourney.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
