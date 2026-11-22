@@ -1,6 +1,6 @@
 # The First Martenitsa
 
-The Bulgarian legend of the first martenitsa, in a pop-up book of cross-stitch: each page is sewn as it opens. A [Popfold](node_modules/popfold/README.md) site, from its storybook template. The pictures (`public/art/`) were made with Midjourney.
+The Bulgarian legend of the first martenitsa, in a pop-up book of cross-stitch: each page is sewn as it opens. A [Popfold](https://github.com/popfold/popfold) site, from its storybook template. The pictures (`public/art/`) were made with Midjourney.
 
 ```
 pnpm install              # Popfold comes from npm (@popfold/engine), at the release package.json names
