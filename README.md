@@ -20,3 +20,14 @@ pnpm deploy:site          # build and upload to storybook.popfold.ca
 | `src/style.css` | The page's look |
 | `vite.config.ts` | The site's name |
 | `src/studio.ts`, `studio.html` | The studio page; nothing to change unless you add homes |
+
+## Credits
+
+Created by **Dimiter Todorov**. Built with **Claude Code** (Anthropic), on [Popfold](https://github.com/popfold/popfold),
+whose own credits are in its `CREDITS.md`.
+
+- **The story:** the Bulgarian legend of Khan Asparuh, his sister Huba and the first martenitsa, retold from the
+  traditional versions.
+- **The pictures** (`public/art/`): made with Midjourney, in the style of Bulgarian cross-stitch embroidery.
+- **Fonts:** Bricolage Grotesque and DM Sans (English), Rubik and Nunito (Bulgarian), all under the SIL Open Font
+  License, through Fontsource.
