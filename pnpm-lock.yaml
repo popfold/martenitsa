@@ -179,8 +179,8 @@ importers:
         specifier: ^5.3.0
         version: 5.3.0
       popfold:
-        specifier: workspace:*
-        version: link:popfold
+        specifier: git+https://github.com/dopamine-spaces/popfold.git#v0.49.0
+        version: git+https://github.com/dopamine-spaces/popfold.git#121a99f3cbce6e7d8bfbf2f679fddbc2a91fa85d(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))
       three:
         specifier: ^0.187.0
         version: 0.187.0
@@ -201,125 +201,7 @@ importers:
         specifier: ^4.166.0
         version: 4.166.0(@types/node@22.20.5)
 
-  popfold:
-    dependencies:
-      '@fontsource-variable/bricolage-grotesque':
-        specifier: ^5.3.0
-        version: 5.3.0
-      '@fontsource-variable/dm-sans':
-        specifier: ^5.3.0
-        version: 5.3.0
-      parse5:
-        specifier: 8.0.1
-        version: 8.0.1
-    devDependencies:
-      '@biomejs/biome':
-        specifier: 2.6.3
-        version: 2.6.3
-      '@gltf-transform/core':
-        specifier: ^4.5.1
-        version: 4.5.1
-      '@gltf-transform/extensions':
-        specifier: ^4.5.1
-        version: 4.5.1
-      '@gltf-transform/functions':
-        specifier: ^4.5.1
-        version: 4.5.1(@types/node@22.20.5)
-      '@types/node':
-        specifier: ^22.20.5
-        version: 22.20.5
-      '@types/three':
-        specifier: ^0.187.0
-        version: 0.187.0
-      meshoptimizer:
-        specifier: ^1.3.0
-        version: 1.3.0
-      playwright-core:
-        specifier: ^1.65.1
-        version: 1.65.1
-      sharp:
-        specifier: ^0.35.5
-        version: 0.35.5(@types/node@22.20.5)
-      three:
-        specifier: ^0.187.0
-        version: 0.187.0
-      typescript:
-        specifier: ^7.0.2
-        version: 7.0.2
-      vite:
-        specifier: ^8.3.8
-        version: 8.3.8(@types/node@22.20.5)(esbuild@0.28.2)
-
 packages:
-
-  '@biomejs/biome@2.6.3':
-    resolution: {integrity: sha512-va/0xPku7wnfzv+D8Zpdm5uKiGJWiV8neqoEPnRjvNQQwhl4tVXS4fETs4H0CCB2rGeqJ4cu9y4iOZOnOYKAUA==}
-    engines: {node: '>=14.21.3'}
-    hasBin: true
-
-  '@biomejs/cli-android-arm64@2.6.3':
-    resolution: {integrity: sha512-5JD7QQDEHxdeEb4sftEHG+lsuUyu8Cob/hVLqRELbgGlFl68Rldv/PPi2k4dRjERZ/EItJ3O6Xmv8lqsEtUBiw==}
-    engines: {node: '>=14.21.3'}
-    cpu: [arm64]
-    os: [android]
-
-  '@biomejs/cli-android-x64@2.6.3':
-    resolution: {integrity: sha512-70WOGKCgpT+Uqg6LFdTLqefV54/DypdZg+LnBQDO6AWvkgXO+9xhVClajQyDsIHYjnXMtI1pRO5sP+zMXlS/bw==}
-    engines: {node: '>=14.21.3'}
-    cpu: [x64]
-    os: [android]
-
-  '@biomejs/cli-darwin-arm64@2.6.3':
-    resolution: {integrity: sha512-ezf+XEKeyJ2yYlBhrzyEEHLvfRYrhtNKc6maLzR/WcAcBccb4RVDeFxsymjBve2LO0bpIMRUAiS90D4bUBRT0A==}
-    engines: {node: '>=14.21.3'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@biomejs/cli-darwin-x64@2.6.3':
-    resolution: {integrity: sha512-Lg2tFdg4elJo+7i707PpLMs6N1hATVt4kqDo6MD/q/VnPs8rsKReKXsz1TA5GNdfRVAQNJ5GRiyK2EwNptK+MA==}
-    engines: {node: '>=14.21.3'}
-    cpu: [x64]
-    os: [darwin]
-
-  '@biomejs/cli-linux-arm64-musl@2.6.3':
-    resolution: {integrity: sha512-dYU70A89OFHzakQPE9VOPbE60JNcQt4mtxvUGQl+EgTkGtqCFxLD2RUn1SbiMu8Mu5xFscS1bfYDpoasaUrqNA==}
-    engines: {node: '>=14.21.3'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [musl]
-
-  '@biomejs/cli-linux-arm64@2.6.3':
-    resolution: {integrity: sha512-8Stcvq98n1gs9VyLKuaWrnsd8kbXE2nKDAHtuLHGSYdGyNWN5JIIm5a28xdnmgdKzKHmiDgYyATetkEv7+zGow==}
-    engines: {node: '>=14.21.3'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [glibc]
-
-  '@biomejs/cli-linux-x64-musl@2.6.3':
-    resolution: {integrity: sha512-j6eFjUcWSphmgVTbrobEMA0wdbfNHKrGi8hRsFkc17jeS1n7nHwFACxp6jWqe9sxQqyFAeyOgt2/1bOGVcbATA==}
-    engines: {node: '>=14.21.3'}
-    cpu: [x64]
-    os: [linux]
-    libc: [musl]
-
-  '@biomejs/cli-linux-x64@2.6.3':
-    resolution: {integrity: sha512-CShmx0bO6BngywT3minv8K1xsQX1ig1vsBqYTLnmDY3mBiDYHlaLRIsdHoM1pEU9dV3BN5a0uiH0IGDtYh9TWA==}
-    engines: {node: '>=14.21.3'}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
-
-  '@biomejs/cli-win32-arm64@2.6.3':
-    resolution: {integrity: sha512-00SthDxBPwNiT7IL/mOneif6fiEU1PXK875zhr+InpeZjovY1mF5tCuDhXo1Hh0GYyiKHKzLbItzn58SAyLhJQ==}
-    engines: {node: '>=14.21.3'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@biomejs/cli-win32-x64@2.6.3':
-    resolution: {integrity: sha512-GhtOPphBWlnCepqpNk/w5eGN5oGRCzL20EbAkL1XCIpyboeVC9R642noyT43l8LSenGS4qz9IL8sKPfwY37V/Q==}
-    engines: {node: '>=14.21.3'}
-    cpu: [x64]
-    os: [win32]
 
   '@cloudflare/kv-asset-handler@0.5.1':
     resolution: {integrity: sha512-48OysfSW3MkQY1XjkhkpPkgrEkOvgfoyHzA2eyX5wpzFpijC02uWigv3hkNdJdT3C7ybW/U17yYHXeR68pLeww==}
@@ -1334,6 +1216,14 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
+  popfold@git+https://github.com/dopamine-spaces/popfold.git#121a99f3cbce6e7d8bfbf2f679fddbc2a91fa85d:
+    resolution: {commit: 121a99f3cbce6e7d8bfbf2f679fddbc2a91fa85d, repo: https://github.com/dopamine-spaces/popfold.git, type: git}
+    version: 0.49.0
+    hasBin: true
+    peerDependencies:
+      three: '>=0.180.0'
+      vite: '>=8.0.0'
+
   postcss@8.5.33:
     resolution: {integrity: sha512-RVHEU9/Pp1Fnjr/MpAJsZoADukCKhfIi15OunEYiGktIkYLkPVvC1sioWolGDS7XByMTx9m/IGbro0Js13zhnQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -1489,49 +1379,6 @@ packages:
     resolution: {integrity: sha512-rLfVLB4FgQneDr0dv1oddCVZmKjcJ6yX6mS4pU82Mq/Dt9a3cLZQ62pDBL4AUO+uVrCvtWz3ZFUL2HFAFJ/BXQ==}
 
 snapshots:
-
-  '@biomejs/biome@2.6.3':
-    optionalDependencies:
-      '@biomejs/cli-android-arm64': 2.6.3
-      '@biomejs/cli-android-x64': 2.6.3
-      '@biomejs/cli-darwin-arm64': 2.6.3
-      '@biomejs/cli-darwin-x64': 2.6.3
-      '@biomejs/cli-linux-arm64': 2.6.3
-      '@biomejs/cli-linux-arm64-musl': 2.6.3
-      '@biomejs/cli-linux-x64': 2.6.3
-      '@biomejs/cli-linux-x64-musl': 2.6.3
-      '@biomejs/cli-win32-arm64': 2.6.3
-      '@biomejs/cli-win32-x64': 2.6.3
-
-  '@biomejs/cli-android-arm64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-android-x64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-darwin-arm64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-darwin-x64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-linux-arm64-musl@2.6.3':
-    optional: true
-
-  '@biomejs/cli-linux-arm64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-linux-x64-musl@2.6.3':
-    optional: true
-
-  '@biomejs/cli-linux-x64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-win32-arm64@2.6.3':
-    optional: true
-
-  '@biomejs/cli-win32-x64@2.6.3':
-    optional: true
 
   '@cloudflare/kv-asset-handler@0.5.1': {}
 
@@ -2282,6 +2129,22 @@ snapshots:
   picomatch@4.0.7: {}
 
   playwright-core@1.65.1: {}
+
+  popfold@git+https://github.com/dopamine-spaces/popfold.git#121a99f3cbce6e7d8bfbf2f679fddbc2a91fa85d(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2)):
+    dependencies:
+      '@fontsource-variable/bricolage-grotesque': 5.3.0
+      '@fontsource-variable/dm-sans': 5.3.0
+      '@gltf-transform/core': 4.5.1
+      '@gltf-transform/extensions': 4.5.1
+      '@gltf-transform/functions': 4.5.1(@types/node@22.20.5)
+      meshoptimizer: 1.3.0
+      parse5: 8.0.1
+      playwright-core: 1.65.1
+      sharp: 0.35.5(@types/node@22.20.5)
+      three: 0.187.0
+      vite: 8.3.8(@types/node@22.20.5)(esbuild@0.28.2)
+    transitivePeerDependencies:
+      - '@types/node'
 
   postcss@8.5.33:
     dependencies:

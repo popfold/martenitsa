@@ -1,5 +1,5 @@
 {
-  "$schema": "../popfold/schema/home.schema.json",
+  "$schema": "../node_modules/popfold/schema/home.schema.json",
   "id": "martenitsa",
   "name": "The first martenitsa",
   "blurb": "A Bulgarian legend in a pop-up book of cross-stitch: each page is sewn as it opens.",

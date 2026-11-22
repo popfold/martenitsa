@@ -1,14 +1,15 @@
 # The First Martenitsa
 
-The Bulgarian legend of the first martenitsa, in a pop-up book of cross-stitch: each page is sewn as it opens. A [Popfold](popfold/README.md) site, from its storybook template. The pictures (`public/art/`) were made with Midjourney.
+The Bulgarian legend of the first martenitsa, in a pop-up book of cross-stitch: each page is sewn as it opens. A [Popfold](node_modules/popfold/README.md) site, from its storybook template. The pictures (`public/art/`) were made with Midjourney. The pages' pictures and stitching need Popfold's
+`martenitsa/book-art` branch until it is released (AGENTS.md).
 
 ```
-git clone --recurse-submodules <this repository>    # Popfold comes along as a submodule
-pnpm install
+pnpm install              # Popfold comes from its git repository, at the release package.json names
 pnpm dev                  # http://127.0.0.1:5196   (studio: /studio.html)
 pnpm exec popfold check   # find mistakes
 pnpm build:static         # capture the stills, then build dist/
 pnpm exec popfold update  # move to the newest Popfold release
+pnpm deploy:site          # build and upload to storybook.popfold.ca
 ```
 
 | File | What to change |

@@ -1,6 +1,3 @@
-packages:
-  - popfold
-
 # Wrangler (the Cloudflare deploy tool) needs these two to fetch the program for this machine
 allowBuilds:
   esbuild: true

@@ -1,15 +1,16 @@
 # The visual test for a Popfold site: on a Machine.dev GPU runner, capture the site's stills as they were before a
 # change and as they are after it, on the same machine, and fail if any picture differs. Each side captures with the
 # Popfold it is pinned to, so moving Popfold (popfold update) is tested too. A run that fails uploads the stills
-# before and after, to look at. Written by `popfold init` and `popfold update` (from popfold/tools/site-ci/); a site
-# may change it.
+# before and after, to look at. Written by `popfold init` and `popfold update` (from Popfold's tools/site-ci/); a
+# site may change it.
 #
-# Popfold is fetched from the same GitHub owner as the site (<owner>/popfold).
+# Popfold is a package each side's pnpm install fetches from its git repository (package.json names the release); it
+# is the same GitHub owner's (<owner>/popfold), read with a deploy key.
 # Needs: the secret POPFOLD_DEPLOY_KEY (a read-only deploy key of the Popfold repository, as ci.yml uses), the
 # Machine Provisioner GitHub App on the organisation, and self-hosted runners allowed for this repository.
 name: Visual test
 
-# Until 1.0.0 every test runs on the developer's machine (popfold/AGENTS.md, rule 9): this runs only when started by
+# Until 1.0.0 every test runs on the developer's machine (Popfold's AGENTS.md, rule 9): this runs only when started by
 # hand (gh workflow run visual.yml), to check the workflow itself. Add push and pull_request back after 1.0.0.
 on:
   workflow_dispatch:
@@ -36,7 +37,7 @@ jobs:
         with:
           path: after
           fetch-depth: 0
-      - name: Which commit to compare with, and the Popfold each side is pinned to
+      - name: Which commit to compare with
         id: base
         working-directory: after
         env:
@@ -48,31 +49,22 @@ jobs:
           if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then base="$(git rev-parse HEAD^)"; fi
           base="$(git rev-parse "$base^{commit}")"
           echo "sha=$base" >> "$GITHUB_OUTPUT"
-          echo "pin_after=$(git ls-tree HEAD popfold | awk '{print $3}')" >> "$GITHUB_OUTPUT"
-          echo "pin_before=$(git ls-tree "$base" popfold | awk '{print $3}')" >> "$GITHUB_OUTPUT"
           echo "Comparing $(git rev-parse --short HEAD) with $(git rev-parse --short "$base")"
       - uses: actions/checkout@v7
         with:
           path: before
           ref: ${{ steps.base.outputs.sha }}
-      - name: Popfold, as each side pins it
+      - name: Read access to Popfold, for pnpm install
         # over SSH on port 443 (ssh.github.com): GPU runners may have no way out on port 22. The host key is
-        # GitHub's own, as https://api.github.com/meta publishes it, not whatever answers.
+        # GitHub's own, as https://api.github.com/meta publishes it, not whatever answers. Each side's package.json
+        # names Popfold by https; git is told to fetch that repository this way instead.
         env:
           KEY: ${{ secrets.POPFOLD_DEPLOY_KEY }}
-          PIN_AFTER: ${{ steps.base.outputs.pin_after }}
-          PIN_BEFORE: ${{ steps.base.outputs.pin_before }}
         run: |
           mkdir -p ~/.ssh && printf '%s\n' "$KEY" > ~/.ssh/popfold && chmod 600 ~/.ssh/popfold
           echo "[ssh.github.com]:443 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
-          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/popfold -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
-          for side in after before; do
-            pin=$([ "$side" = after ] && echo "$PIN_AFTER" || echo "$PIN_BEFORE")
-            mkdir -p "$side/popfold" && git -C "$side/popfold" init -q
-            git -C "$side/popfold" fetch -q --depth 1 ssh://git@ssh.github.com:443/${{ github.repository_owner }}/popfold.git "$pin"
-            git -C "$side/popfold" checkout -q FETCH_HEAD
-            echo "$side: Popfold $(git -C "$side/popfold" rev-parse --short HEAD)"
-          done
+          git config --global core.sshCommand "ssh -i $HOME/.ssh/popfold -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+          git config --global url."ssh://git@ssh.github.com:443/${{ github.repository_owner }}/popfold".insteadOf "https://github.com/${{ github.repository_owner }}/popfold"
       - uses: pnpm/action-setup@v6
         with:
           package_json_file: after/package.json
@@ -87,7 +79,7 @@ jobs:
           nvidia-smi --query-gpu=name,driver_version --format=csv,noheader
       - run: (cd after && pnpm install --frozen-lockfile) && (cd before && pnpm install --frozen-lockfile)
       - name: Stills before and after, compared
-        run: node after/popfold/tools/visual-test.mjs --before before --after after --report "$RUNNER_TEMP/report"
+        run: node after/node_modules/popfold/tools/visual-test.mjs --before before --after after --report "$RUNNER_TEMP/report"
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
