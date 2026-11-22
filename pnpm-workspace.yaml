@@ -2,3 +2,6 @@
 allowBuilds:
   esbuild: true
   workerd: true
+# Popfold's releases are new on npm when a site moves to them; pnpm would hold them back for a day
+minimumReleaseAgeExclude:
+  - '@popfold/engine'

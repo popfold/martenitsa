@@ -179,8 +179,8 @@ importers:
         specifier: ^5.3.0
         version: 5.3.0
       popfold:
-        specifier: git+https://github.com/dopamine-spaces/popfold.git#v0.50.1
-        version: '@popfold/engine@git+https://github.com/dopamine-spaces/popfold.git#2d78006cb9698d06bb8c5a864fad67b55f5733bf(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))'
+        specifier: npm:@popfold/engine@0.50.1
+        version: '@popfold/engine@0.50.1(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))'
       three:
         specifier: ^0.187.0
         version: 0.187.0
@@ -632,9 +632,8 @@ packages:
   '@oxc-project/types@0.156.0':
     resolution: {integrity: sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw==}
 
-  '@popfold/engine@git+https://github.com/dopamine-spaces/popfold.git#2d78006cb9698d06bb8c5a864fad67b55f5733bf':
-    resolution: {commit: 2d78006cb9698d06bb8c5a864fad67b55f5733bf, repo: https://github.com/dopamine-spaces/popfold.git, type: git}
-    version: 0.50.1
+  '@popfold/engine@0.50.1':
+    resolution: {integrity: sha512-Ocxc0lYMbjYdS7ge35qFScWgfEAFjAsTuz8EGhBzVdCwa7mQNycbj+w0p/nFA29SRZCrcYhZTBDrvibbgdsOiA==}
     hasBin: true
     peerDependencies:
       three: '>=0.180.0'
@@ -1667,7 +1666,7 @@ snapshots:
 
   '@oxc-project/types@0.156.0': {}
 
-  '@popfold/engine@git+https://github.com/dopamine-spaces/popfold.git#2d78006cb9698d06bb8c5a864fad67b55f5733bf(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))':
+  '@popfold/engine@0.50.1(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))':
     dependencies:
       '@fontsource-variable/bricolage-grotesque': 5.3.0
       '@fontsource-variable/dm-sans': 5.3.0

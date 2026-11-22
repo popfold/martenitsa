@@ -4,10 +4,9 @@
 # before and after, to look at. Written by `popfold init` and `popfold update` (from Popfold's tools/site-ci/); a
 # site may change it.
 #
-# Popfold is a package each side's pnpm install fetches from its git repository (package.json names the release); it
-# is the same GitHub owner's (<owner>/popfold), read with a deploy key.
-# Needs: the secret POPFOLD_DEPLOY_KEY (a read-only deploy key of the Popfold repository, as ci.yml uses), the
-# Machine Provisioner GitHub App on the organisation, and self-hosted runners allowed for this repository.
+# Popfold is a package from npm (@popfold/engine) that each side's pnpm install fetches, at the release its
+# package.json names. Needs: the Machine Provisioner GitHub App on the organisation, and self-hosted runners allowed
+# for this repository.
 name: Visual test
 
 # Until 1.0.0 every test runs on the developer's machine (Popfold's AGENTS.md, rule 9): this runs only when started by
@@ -54,17 +53,6 @@ jobs:
         with:
           path: before
           ref: ${{ steps.base.outputs.sha }}
-      - name: Read access to Popfold, for pnpm install
-        # over SSH on port 443 (ssh.github.com): GPU runners may have no way out on port 22. The host key is
-        # GitHub's own, as https://api.github.com/meta publishes it, not whatever answers. Each side's package.json
-        # names Popfold by https; git is told to fetch that repository this way instead.
-        env:
-          KEY: ${{ secrets.POPFOLD_DEPLOY_KEY }}
-        run: |
-          mkdir -p ~/.ssh && printf '%s\n' "$KEY" > ~/.ssh/popfold && chmod 600 ~/.ssh/popfold
-          echo "[ssh.github.com]:443 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
-          git config --global core.sshCommand "ssh -i $HOME/.ssh/popfold -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
-          git config --global url."ssh://git@ssh.github.com:443/${{ github.repository_owner }}/popfold".insteadOf "https://github.com/${{ github.repository_owner }}/popfold"
       - uses: pnpm/action-setup@v6
         with:
           package_json_file: after/package.json
