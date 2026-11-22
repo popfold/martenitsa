@@ -83,3 +83,8 @@ h3 { font-size: 19px; }
 
 /* Bulgarian: the site's two faces have no Cyrillic, so the Bulgarian page (and the БГ link) uses two that do */
 :lang(bg) { --display: 'Rubik Variable', Georgia, serif; --body: 'Nunito Variable', system-ui, sans-serif; }
+
+/* the "Made with Popfold" badge, under the last page */
+.site-foot { display: flex; justify-content: center; padding: 8px 16px 40px; }
+.made-with-popfold { display: inline-block; border-radius: 10px; line-height: 0; }
+.made-with-popfold:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
