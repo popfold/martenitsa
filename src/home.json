@@ -25,7 +25,7 @@
   ],
   "pieces": [
     {
-      "id": "tulip-left", "room": "farewell", "kind": "stand", "at": [-2.35, 1.65], "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#C9952B" },
+      "id": "tulip-left", "room": "farewell", "kind": "stand", "at": [-2.35, 1.65], "hidden": true, "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#C9952B" },
       "story": {
         "title": "Kubrat's sons",
         "text": "Khan Kubrat told his sons to hold together, like a bundle of arrows that no one can break. After him, Asparuh led his people south to look for a new home.",
@@ -63,7 +63,7 @@
     { "id": "rose-small", "room": "thread", "kind": "stand", "at": [-1.75, 1.78], "opts": { "shape": "flower", "w": 0.34, "h": 0.42, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#F4EEE2" } },
     { "id": "rose-right", "room": "thread", "kind": "stand", "at": [2.25, 1.65], "opts": { "shape": "flower", "w": 0.46, "h": 0.58, "lean": "front", "color": "#C8546A", "color2": "#3E6B3A", "color3": "#C9952B" } },
     {
-      "id": "pizho", "room": "martenitsa", "kind": "stand", "at": [-2.25, 1.7], "opts": { "shape": "flower", "w": 0.4, "h": 0.52, "lean": "front", "color": "#F4EEE2", "color2": "#3E6B3A", "color3": "#A3242C" },
+      "id": "pizho", "room": "martenitsa", "kind": "box", "at": [-2.25, 1.554], "opts": { "shape": "flower", "w": 0.4, "h": 0.52, "lean": "front", "color": "#F4EEE2", "color2": "#3E6B3A", "color3": "#A3242C" },
       "story": {
         "title": "The first martenitsa",
         "text": "Asparuh tied the red and white thread to his warriors' wrists. Bulgarians still tie red and white threads, martenitsi, on the first of March.",
