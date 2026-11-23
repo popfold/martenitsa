@@ -1,3 +1,4 @@
 node_modules
 dist
 popfold-shot-*.png
+.env

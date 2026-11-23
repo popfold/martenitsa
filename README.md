@@ -14,6 +14,9 @@ pnpm exec popfold update  # move to the newest Popfold release
 pnpm deploy:site          # build and upload to storybook.popfold.ca
 ```
 
+Deploying needs the Cloudflare account in `CLOUDFLARE_ACCOUNT_ID`, which Wrangler reads from a `.env` file here
+(ignored by git, so the account stays out of the repository).
+
 | File | What to change |
 |---|---|
 | `index.html` | The copy. One `<section class="stage" id="…">` per page of the book; each page's section has the page's id |
