@@ -8,7 +8,9 @@ import { homeSaver, popfoldFallback } from 'popfold/vite';
 export default defineConfig({
   base: './',
   plugins: [
-    homeSaver({ home: 'src/home.json' }), // the studio's Save writes moved pieces into the home file
+    // the studio's Save writes moved pieces into the home file; on the deployed site, Save to GitHub sends them
+    // through Popfold's save service as a pull request from studio/<login> into main
+    homeSaver({ home: 'src/home.json', save: { service: 'https://popfold-save.popfold.workers.dev', repo: 'popfold/martenitsa' } }),
     popfoldFallback({
       siteName: 'The First Martenitsa',
       pages: [

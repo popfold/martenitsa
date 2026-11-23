@@ -16,7 +16,7 @@
     "@fontsource-variable/dm-sans": "^5.3.0",
     "@fontsource-variable/nunito": "^5.3.0",
     "@fontsource-variable/rubik": "^5.3.0",
-    "popfold": "github:popfold/popfold#v0.51.0",
+    "popfold": "github:popfold/popfold#v0.52.2",
     "three": "^0.187.0"
   },
   "devDependencies": {

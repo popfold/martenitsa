@@ -179,8 +179,8 @@ importers:
         specifier: ^5.3.0
         version: 5.3.0
       popfold:
-        specifier: github:popfold/popfold#v0.51.0
-        version: '@popfold/engine@https://codeload.github.com/popfold/popfold/tar.gz/53b63c7c945236210b43b9218c5e6fe1ec7ce61c(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))'
+        specifier: github:popfold/popfold#v0.52.2
+        version: '@popfold/engine@https://codeload.github.com/popfold/popfold/tar.gz/1cb772d4bbb5b0dccd1ec57ee8b08815e5a34ac5(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))'
       three:
         specifier: ^0.187.0
         version: 0.187.0
@@ -632,9 +632,9 @@ packages:
   '@oxc-project/types@0.156.0':
     resolution: {integrity: sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw==}
 
-  '@popfold/engine@https://codeload.github.com/popfold/popfold/tar.gz/53b63c7c945236210b43b9218c5e6fe1ec7ce61c':
-    resolution: {gitHosted: true, integrity: sha512-wzjPTZ3zB1XgtzlOQo36VdrGsAdFQuJ4KBRwnRbVMKK9nwiM9Pe8AOvwrqVjGBHnACHl/hb7l9okHQAb0Vunpw==, tarball: https://codeload.github.com/popfold/popfold/tar.gz/53b63c7c945236210b43b9218c5e6fe1ec7ce61c}
-    version: 0.51.0
+  '@popfold/engine@https://codeload.github.com/popfold/popfold/tar.gz/1cb772d4bbb5b0dccd1ec57ee8b08815e5a34ac5':
+    resolution: {gitHosted: true, integrity: sha512-XcOLyFEY3xqwzokZvhAELS5xwLwAOTl34phdlKdM6/jVDe77EdnzHKGtnzOvcJPFZUhDZ3ihYrEGSh1HCpy6tQ==, tarball: https://codeload.github.com/popfold/popfold/tar.gz/1cb772d4bbb5b0dccd1ec57ee8b08815e5a34ac5}
+    version: 0.52.2
     hasBin: true
     peerDependencies:
       three: '>=0.180.0'
@@ -1667,7 +1667,7 @@ snapshots:
 
   '@oxc-project/types@0.156.0': {}
 
-  '@popfold/engine@https://codeload.github.com/popfold/popfold/tar.gz/53b63c7c945236210b43b9218c5e6fe1ec7ce61c(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))':
+  '@popfold/engine@https://codeload.github.com/popfold/popfold/tar.gz/1cb772d4bbb5b0dccd1ec57ee8b08815e5a34ac5(@types/node@22.20.5)(three@0.187.0)(vite@8.3.8(@types/node@22.20.5)(esbuild@0.28.2))':
     dependencies:
       '@fontsource-variable/bricolage-grotesque': 5.3.0
       '@fontsource-variable/dm-sans': 5.3.0
