@@ -25,7 +25,7 @@
   ],
   "pieces": [
     {
-      "id": "tulip-left", "room": "farewell", "kind": "stand", "at": [-2.35, 1.65], "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#C9952B" },
+      "id": "tulip-left", "room": "farewell", "kind": "stand", "at": [-2.35, 1.65], "hidden": true, "opts": { "shape": "flower", "w": 0.42, "h": 0.55, "lean": "front", "color": "#A3242C", "color2": "#3E6B3A", "color3": "#C9952B" },
       "story": {
         "title": "Kubrat's sons",
         "text": "Khan Kubrat told his sons to hold together, like a bundle of arrows that no one can break. After him, Asparuh led his people south to look for a new home.",
